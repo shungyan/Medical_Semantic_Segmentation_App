@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Image Prediction</title>
+</head>
+<body>
+    <h1>Brain Tumor Segmentation</h1>
+    <form action="/" method="post">
+        <label for="slice_number">Enter Slice Number:</label>
+        <input type="text" name="slice_number" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if img_base64 %}
+        <img src="data:image/png;base64,{{ img_base64 }}" alt="Prediction Result">
+    {% endif %}
+</body>
+</html>
